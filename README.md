@@ -7,7 +7,7 @@
 
 2、打开对应文件夹，点击upload即可上传你的文件，文件名备注为：user_name_script_name.sh
 
-3、提交 pr：Fork 本项目，然后在 GitHub 网页端点击 Upload File 上传文件，发起 PR 即可。或者也可以直接附加在 Issue 中，由我来进行添加哦。
+3、提交 pr：添加完文件或者修改文件后，点击pull requests,新建一个pr即可。或者也可以直接附加在 Issue 中，由我来进行添加哦。
 
 #### 目录
 - 系统管理

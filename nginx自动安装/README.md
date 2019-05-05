@@ -5,6 +5,7 @@
 ```
 #!/bin/bash
 #by lutixiaya
+#centos 7.4
 #nginx 1.14
 #####################
 ```

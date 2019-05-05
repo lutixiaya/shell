@@ -6,6 +6,7 @@
 #!/bin/bash
 #by lutixiaya
 :<<!
+centos 7.4
 nginx 1.14
 mysql 5.5
 php 5.4

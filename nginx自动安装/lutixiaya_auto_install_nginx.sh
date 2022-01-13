@@ -24,14 +24,14 @@ auto_install_nginx() {
 			cd "$BASE_DIR"
 			tar xf ${APP}-${NGINX_VERSION}.tar.gz
 			cd ${APP}-${NGINX_VERSION}
-			./configure ${CONFIG_OPTIONS} && make && make install && \
+			./configure ${CONFIG_OPTIONS} && make && make install && {\
 			echo -e "\t\033[1;32m-----------------------------------------------------------------"
             echo -e "\t| \t\t${APP}-${NGINX_VERSION} 部署成功！\t\t\t\t|"
             echo -e "\t| ${APP}的默认安装目录路径：`printf '%-37s' ${INSTALL_NGINX_PATH}`|"
             echo -e "\t| ${APP}的默认配置文件路径：`printf '%-37s' ${INSTALL_NGINX_PATH}/conf/nginx.conf`|"
             echo -e "\t| ${APP}的默认发布目录路径：`printf '%-37s' ${INSTALL_NGINX_PATH}/html`|"
             echo -e "\t| ${APP}的更多教程可以访问：`printf '%-37s' https://www.lutixia.cn`|"
-            echo -e "\t-----------------------------------------------------------------\033[0m"   || \
+            echo -e "\t-----------------------------------------------------------------\033[0m" ;} || \
 			echo -e "\033[0;31m ${APP}-${NGINX_VERSION} 安装失败！\033[0m"
 		fi
 	fi

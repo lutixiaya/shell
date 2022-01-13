@@ -28,7 +28,7 @@ check_multi_host() {
     # 当要检测192.168.75.0整个网段时，请输入：\n\
       192.168.75.0/24 \n\
     "
-    read -p "请输入要ip范围或者网段：" -a  ip
+    read -p "请输入要检测的ip范围或者网段：" -a  ip
     echo -e "\t\033[0;32m检测中，请稍后...\033[0m"
     fping -r 1 -g `echo ${ip[@]}` &>/tmp/ip_temp_list
     if  grep "parse" /tmp/ip_temp_list &>/dev/null;then

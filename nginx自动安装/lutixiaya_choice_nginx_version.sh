@@ -4,7 +4,6 @@
 ####################################
 
 APP=nginx
-NGINX_VERSION=1.18.0
 BASE_DIR=/usr/src/
 INSTALL_NGINX_PATH=/usr/local/nginx
 CONFIG_OPTIONS="--prefix=${INSTALL_NGINX_PATH} \

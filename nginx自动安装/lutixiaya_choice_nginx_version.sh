@@ -19,8 +19,9 @@ choice_nginx_version() {
 	else
 		echo -e "请输入${APP}版本号：例如：${NGINX_LIST[@]}\033[0;31m，推荐使用1.18.0版本\033[0m。"
         read -p "请参考上面的格式输入${APP}版本号：" NGINX_VERSION
-        echo -e "\t\033[0;36m正在安装${APP}-${NGINX_VERSION},请稍等...\033[0m"
         # 安装依赖：
+        [[ -n ${NGINX_VERSION} ]] && {\
+        echo -e "\t\033[0;36m正在安装${APP}-${NGINX_VERSION},请稍等...\033[0m"
 		yum install wget pcre-devel zlib-devel -y >/dev/null && \
 		wget -c -P "${BASE_DIR}" http://nginx.org/download/${APP}-${NGINX_VERSION}.tar.gz
 		if [[ $? -ne 0 ]];then
@@ -36,9 +37,11 @@ choice_nginx_version() {
             echo -e "\t| ${APP}的默认配置文件路径：`printf '%-37s' ${INSTALL_NGINX_PATH}/conf/nginx.conf`|"
             echo -e "\t| ${APP}的默认发布目录路径：`printf '%-37s' ${INSTALL_NGINX_PATH}/html`|"
             echo -e "\t| ${APP}的更多教程可以访问：`printf '%-37s' https://www.lutixia.cn`|"
-            echo -e "\t-----------------------------------------------------------------\033[0m"; }  || \
+            echo -e "\t-----------------------------------------------------------------\033[0m";}  || \
 			echo -e "\033[0;31m ${APP}-${NGINX_VERSION} 安装失败！\033[0m"
 		fi
+		} || \
+		echo -e "\t\033[0;32m你还没有输入${APP}版本！\033[0m"
 	fi
 }
 

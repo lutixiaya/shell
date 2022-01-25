@@ -7,7 +7,8 @@
 check_fping() {
     echo -e "\t\033[0;32m正在检测并安装fping工具，请稍后...\033[0m"
     rpm -q fping &>/dev/null && echo -e "\t\033[1;34mfping已成功安装！请继续...\033[0m" || {
-    yum install fping -y &>/dev/null  || echo -e "\t\033[0;31安装fping工具包失败！请检查是否配置好镜像仓库...\033[0m"
+    yum install fping -y &>/dev/null  || echo -e "\t\033[0;31m安装fping工具包失败！请检查是否配置好镜像仓库...\033[0m" && \
+	exit 1
     }
 }
 
@@ -62,12 +63,12 @@ fping_menu() {
     case ${FPING_CHOICE} in
           1)
                 echo
-                check_fping
+                check_fping && \
                 check_single_host
                 ;;
           2)
                 echo
-                check_fping
+                check_fping && \
                 check_multi_host
                 ;;
           3)
